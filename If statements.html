@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="eventNumber()">click me</button>
+</body>
+<script>
+    function eventNumber(){
+        let arr=[];
+        for (let i=0;i<=100;i++){
+            arr.push(i);
+        }
+        let eventnumber=arr.filter(number=>number %2===0);
+        let sum=0;
+        for(let number of eventnumber){
+            sum+=number;
+        }
+        console.log(sum);
+    }
+</script>
+</html>
