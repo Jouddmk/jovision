@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="name" placeholder="Name" />
+    <button id="submit">Submit</button>
+    <script>
+        document.getElementById("submit").addEventListener("click", async function () {
+            const nameValue = document.getElementById("name").value;
+            const url =
+                "https://api.agify.io?name=" + encodeURIComponent(nameValue);
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.json();
+                    const { age } = data;
+                    alert(`your name is:${nameValue} \n your age is:${age}`);
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        });
+    </script>
+</body>
+
+</html>
