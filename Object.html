@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="name" placeholder="Name" />
+    <br />
+    <input type="text" id="age" placeholder="age" />
+    <br />
+    <button id="submit">Submit</button>
+    <script>
+      document.getElementById("submit").addEventListener("click", function () {
+        const name = document.getElementById("name").value;
+        const age = document.getElementById("age").value;
+        const timestamp = new Date().toLocaleString();
+        const person = { name: name, age: age, timestamp: timestamp };
+
+        const {
+          name: personName,
+          age: personAge,
+          timestamp: personTimestamp,
+        } = person;
+        alert(
+          `name is ${personName}\n Your age is: ${personAge} \nTimestamp: ${personTimestamp}`
+        );
+      });
+    </script>
+  </body>
+</html>
